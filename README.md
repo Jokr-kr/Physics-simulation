@@ -22,10 +22,12 @@ To deepen understanding, this project avoids using most external libraries, incl
 ## Installation & Usage
 Instructions to build and run the simulation will be provided here at a later date.
 
+## API for the APIEngine
+-
+-
 
 
-#nonserious inclusions "be-low"
-
+# Nonserious inclusions "be-low"
 ## Things i have learned during the making of this project:
 - "#ifndef/#define/#endif is the conventional way to ensure a file is compiled only once. #pragma once is an alternative but isn't universally supported."
 - C++ access levels (public, private, protected) are declared within the class. making classes not inherently private or public, but can have both private and public variables and functions.
