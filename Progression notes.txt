@@ -1,0 +1,104 @@
+
+progression:
+Decision made to start a project.
+Chose to start making physics engine in C++.(only intended for learning)
+Decided to use visual studio code as IDE. already installed.
+Extension: c/c++ and c/c++ Extension Pack.
+Download and install MinGW.
+made progression notes to keep track of progress.
+will eventually use github for version controll,
+but first i want to make an outline in .hpp files
+starting to make files to get a rough estimate of what is needed
+
+create file - main.cpp
+              main.hpp
+              vector2d.hpp
+              PhysicsObject.hpp
+              physicsEngine.hpp
+
+create dir - PhysicsEngineProject
+             /include
+             /src
+
+create dir - include
+             /core 
+             /engine
+             
+create dir - src
+             /core
+             /engine
+
+move file - include:
+            main.hpp
+
+move file - include/core:
+            PhysicsObject.hpp
+            vector2d.hpp
+
+move file - include/Engine:
+            physicsEngine
+
+move file - src:
+            main.cpp
+
+move file - PhysicsEngineProject:
+            README.txt
+
+create file - src/core:
+              PhysicsObject.cpp
+              vector2d.cpp
+
+create file - src/engine:
+              PhysicsEngine.cpp
+
+code - Vector2d.hpp      short(x,y | constructor |4 operators | magnitude | normalize)
+code - vector2d.cpp      after implementing a couple elements i realised i needed a math library, i dont want external libraries for this project so i create one.
+
+create dir - libraries
+             /Math
+
+create file - libraries/Math
+              MathFunctions.hpp
+              MathFunctions.cpp
+
+code - MathFunctions.hpp     short: list of different calculations,(sqrt,multiply,divide,power etc.)
+as i was making this i learned about consexpr, which seem good to optimize things at compile time, decided to make a constants file
+
+create file - libraries/Math:
+              Mathconstants.hpp
+
+code - MathConstants.hpp     added alot of know constants, also learned more about sub-namespaces
+i might consider later to change a few of these, or remove them alltogether.
+
+code - PhysicsObject.hpp    adding all the things i believe might be useful, several variables and a bunch of getters and setters
+
+create file - include/core
+              Colission.hpp
+              ForceManager.hpp
+
+create file - src/core
+              Colission.cpp
+              ForceManager.cpp
+
+code - Collision.hpp        decided to have colission detection for circles and squares for now.
+code - ForceManager.hpp     will eventually likely be used for global forces like gravity, friction, wind etc.
+code - MathFunctions.cpp    found a few more functions that i also needed, added them to the .hpp file as well
+
+code - PhysicsObject.cpp    implementing what the hpp file says
+code - colission.cpp        circle collision easy (5 minutes), square collision (rest of the day)
+code - PhysicsObject.cpp    had to create a getcorner function to use in colission.cpp(this included corners for angled squares)
+
+first time using C++,
+notable things i learn or wish to remember:
+#ifndef/#define/#endif is best practice in making sure the file is only compiled once
+C++ access is declared inside the class making it possible to have a public,private and protected part in each class.(im used to java/C# type declaring)
+in a constructor (float x = 0.0f) means a float can be included but =0.0f is a default in case its not.
+overloading operators is a thing     short( Vector2D operator+(const Vector2D& other) const; where both const declares that the vector2d and other wont be changed in the function.)
+<< and >> are bitwise shifts like in java, but with "cout" and "cin" in front they work as printing and reading from console
+in division, looking for powers of 2 with if((x & (x-1)==0) x > 0) and then shift based on trailing zeroes with n >> std::countr_zero(x);
+is faster for powers of 2's than just running it through n/x
+constexpr is useful to let certain calculations be done at compile-time, this will make sure these calculations dont have to be made at runtime, possibly making the program more efficient.
+why not use constexpr all the time: can slow down compile-time,so ive decided to only use it for know constants.
+moving away from x & (x-1) as i realize that doesnt work with float as well as i thought.
+
+
