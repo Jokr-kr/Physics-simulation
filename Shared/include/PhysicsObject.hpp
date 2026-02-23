@@ -30,7 +30,7 @@ private:
     float angularAcceleration;
 
 public:
-    PhysicsObject(ObjectType objType, Vector2D pos, Vector2D vel, float mass, float hitbox)
+    PhysicsObject(ObjectType objType, Vector2D pos, Vector2D vel, float mass, float hitbox);
 
     void applyForce(const Vector2D &force);
     void update(float deltaTime);
