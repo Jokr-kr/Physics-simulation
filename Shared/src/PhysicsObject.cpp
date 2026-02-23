@@ -33,8 +33,8 @@ Vector2D *PhysicsObject::getCorners() const
 
     Vector2D topLeft(-halfWidth, halfWidth);
     Vector2D topRight(halfWidth, halfWidth);
-    Vector2D bottomRight(-halfWidth, -halfWidth);
-    Vector2D bottomLeft(halfWidth, -halfWidth);
+    Vector2D bottomRight(halfWidth, -halfWidth);
+    Vector2D bottomLeft(-halfWidth, -halfWidth);
 
     corners[0] = Vector2D(
         position.x + topLeft.x * cos(angle) - topLeft.y * sin(angle),
