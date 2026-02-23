@@ -7,7 +7,7 @@ using namespace MathFunctions;
 namespace Mathfunctions
 {
     // power and root
-    static float sqrt(float x)
+    float sqrt(float x)
     {
         if (x < 0)
         {
@@ -33,7 +33,7 @@ namespace Mathfunctions
         return guess;
     }
 
-    static float invsqrt(float value)
+    float invsqrt(float value)
     {
         if (value <= 0.0f)
         {
@@ -55,7 +55,7 @@ namespace Mathfunctions
         return y;
     }
 
-    static float pow(float base, int exponent)
+    float pow(float base, int exponent)
     {
         // Handle special cases
         if (base == 0.0f && exponent < 0)
@@ -84,7 +84,7 @@ namespace Mathfunctions
     }
 
     // trigonimetry
-    static float asin(float x)
+    float asin(float x)
     {
         if (x < -1.0f || x > 1.0f)
         {
@@ -104,7 +104,7 @@ namespace Mathfunctions
         return result;
     };
 
-    static float acos(float x)
+    float acos(float x)
     {
         if (x < -1.0f || x > 1.0f)
         {
@@ -113,7 +113,7 @@ namespace Mathfunctions
         return 1.57079633f - asin(x);
     };
 
-    static float atan(float x)
+    float atan(float x)
     {
         float result = 0.0f;
         float term;
@@ -128,7 +128,7 @@ namespace Mathfunctions
         return result;
     };
 
-    static float sin(float degrees)
+    float sin(float degrees)
     {
         // Convert degrees to radians
         float x = degrees * (DEG_TO_RAD);
@@ -151,7 +151,7 @@ namespace Mathfunctions
         return result;
     };
 
-    static float cos(float degrees)
+    float cos(float degrees)
     {
         float x = degrees * (DEG_TO_RAD);
 
@@ -173,7 +173,7 @@ namespace Mathfunctions
         return result;
     };
 
-    static float tan(float degrees)
+    float tan(float degrees)
     {
         float cosineValue = cos(degrees);
         if (cosineValue == 0.0f)
@@ -186,7 +186,7 @@ namespace Mathfunctions
     };
 
     // Logarithmic and Exponential Functions
-    static float log(float x)
+    float log(float x)
     {
         if (x <= 0.0f)
         {
@@ -210,7 +210,7 @@ namespace Mathfunctions
         return result;
     };
 
-    static float exp(float x)
+    float exp(float x)
     {
         float result = 1.0f;
         float term = 1.0f;
@@ -226,7 +226,7 @@ namespace Mathfunctions
     };
 
     // Miscellaneous
-    static float clamp(float value, float min, float max)
+    float clamp(float value, float min, float max)
     {
         if (value < min)
         {
@@ -239,10 +239,10 @@ namespace Mathfunctions
         return value;
     }
 
-    static float lerp(float a, float b, float t) { return a + (b - a) * t; }
-    static float abs(float x) { return (x < 0) ? -x : x; };
+    float lerp(float a, float b, float t) { return a + (b - a) * t; }
+    float abs(float x) { return (x < 0) ? -x : x; };
 
-    static float sign(float x)
+    float sign(float x)
     {
         if (x > 0)
         {
@@ -255,7 +255,7 @@ namespace Mathfunctions
         return 0.0f;
     }
 
-    static int factorial(int x)
+    int factorial(int x)
     {
         if (x < 0)
         {
