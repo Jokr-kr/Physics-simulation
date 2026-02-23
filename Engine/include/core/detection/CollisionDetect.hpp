@@ -6,9 +6,9 @@
 
 namespace CollisionDetect
 {
-    bool detectCircleCollision(const PhysicsObject &circle1, const PhysicsObject &circle2);
-    bool detectSquareCollision(const PhysicsObject &square1, const PhysicsObject &square2);
-    bool detectCircleSquareCollision(const PhysicsObject &circle, const PhysicsObject &square);
+    void detectCircleCollision(PhysicsObject &circle1, PhysicsObject &circle2);
+    void detectSquareCollision(PhysicsObject &square1, PhysicsObject &square2);
+    void detectCircleSquareCollision(PhysicsObject &circle, PhysicsObject &square);
     // broad-phase check
     bool checkCollision(const PhysicsObject &obj1, const PhysicsObject &obj2);
 }
