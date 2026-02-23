@@ -44,7 +44,7 @@ namespace CollisionResolve
         circle2.setVelocity(circle2.getVelocity() + impulse / circle2.getMass());
 
         circle1.setAngularVelocity(circle1.getAngularVelocity() - (r1.cross(impulse) / circle1.getMomentOfInertia()));
-        circle2.setAngularVelocity(circle2.getAngularVelocity() - (r2.cross(impulse) / circle2.getMomentOfInertia()));
+        circle2.setAngularVelocity(circle2.getAngularVelocity() + (r2.cross(impulse) / circle2.getMomentOfInertia()));
     };
 
     void resolveSquareCollision(PhysicsObject &square1, PhysicsObject &square2)
@@ -73,7 +73,7 @@ namespace CollisionResolve
 
             axis2 = axis2.normalize();
 
-            float overlap2 = calculateOverlap(corners1, corners2, axis1);
+            float overlap2 = calculateOverlap(corners1, corners2, axis2);
             if (overlap2 < minOverlap)
             {
                 minOverlap = overlap2;
@@ -113,7 +113,7 @@ namespace CollisionResolve
         Vector2D impulse = mtvAxis * impulseScalar;
 
         square1.setVelocity(square1.getVelocity() - impulse / square1.getMass());
-        square1.setVelocity(square2.getVelocity() + impulse / square2.getMass());
+        square2.setVelocity(square2.getVelocity() + impulse / square2.getMass());
 
         square1.setAngularVelocity(square1.getAngularVelocity() + (r1.cross(impulse) / square1.getMomentOfInertia()));
         square2.setAngularVelocity(square2.getAngularVelocity() + (r2.cross(impulse) / square2.getMomentOfInertia()));
