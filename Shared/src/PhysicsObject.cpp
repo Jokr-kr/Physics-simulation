@@ -5,9 +5,9 @@
 
 using namespace MathFunctions;
 
-PhysicsObject::PhysicsObject(ObjectType objType, Vector2D pos, Vector2D vel, float m, float h)
-    : type(objType), position(pos), velocity(vel), acceleration(Vector2D(0, 0)), mass(m),
-      hitBox(h), friction(0.1f), angle(0.0f), angularVelocity(0.0f), angularAcceleration(0.0f) {}
+PhysicsObject::PhysicsObject(ObjectType objType, Vector2D pos, Vector2D vel, float mass, float hitbox)
+    : type(objType), position(pos), velocity(vel), acceleration(Vector2D(0, 0)), mass(mass),
+      hitBox(hitbox), friction(0.1f), angle(0.0f), angularVelocity(0.0f), angularAcceleration(0.0f) {}
 
 void PhysicsObject::applyForce(const Vector2D &force)
 {
