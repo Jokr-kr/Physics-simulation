@@ -31,7 +31,6 @@ private:
 
 public:
     PhysicsObject(ObjectType objType, Vector2D pos, Vector2D vel, float mass, float hitbox)
-        : type(objType), position(pos), velocity(vel), acceleration(Vector2D(0, 0)), mass(mass), hitBox(1.0f), friction(0.1f), angle(0.0f), angularVelocity(0.0f), angularAcceleration(0.0f) {}
 
     void applyForce(const Vector2D &force);
     void update(float deltaTime);
